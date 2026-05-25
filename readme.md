@@ -1,0 +1,1 @@
+Meet Finn, an autonomous (mini) vehicle with the purpose of navigating through complex terrains!
