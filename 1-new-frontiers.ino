@@ -20,8 +20,7 @@ void setup() {
   irrecv.enableIRIn();
   
   Serial.begin(9600);
-  Serial.println("=== Car Ready - Speed: " + String(IR_CAR_SPEED) + " ===");
-  Serial.println("No buzzer alarm - Ready");
+  Serial.println("=== Car Ready ===");
 }
 
 void loop() {
@@ -29,9 +28,6 @@ void loop() {
     if (results.value != 0xFFFFFFFF) {
       lastKeyCode = results.value;
     }
-
-    // Serial.print("IR Code: 0x");   // Comment out if you don't want logs
-    // Serial.println(results.value, HEX);
 
     switch (lastKeyCode) {
       case 0xFF02FD: motorRun(IR_CAR_SPEED, IR_CAR_SPEED); break;   // Up
@@ -56,7 +52,7 @@ void pinsSetup() {
   pinMode(PIN_MOTOR_PWM_LEFT, OUTPUT);
   pinMode(PIN_MOTOR_PWM_RIGHT, OUTPUT);
   pinMode(A0, OUTPUT);
-  digitalWrite(A0, LOW);     // Turn buzzer OFF
+  digitalWrite(A0, LOW);
 }
 
 void motorRun(int speedl, int speedr) {
