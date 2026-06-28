@@ -7,6 +7,5 @@ A simulated 3D world in Unity is included to demo the car's thought process and 
 
 
 Techniques to be explored:
-* Kalman Filters
-* PID
-* SLAM
+* Fully autonomous house mapping
+* Particle filters for localization
